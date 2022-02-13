@@ -1,11 +1,15 @@
 from tkinter import *
 from words_class import Words
 from score import Score
+import time
+
+start = time.time()
 
 current = ""
 
 # Setup
 window = Tk()
+score = Score()
 
 
 # 3. ToDo Call word class and compare user input to current word, if same add point and next word
@@ -28,10 +32,12 @@ def check_word(answer):
     typed_word = answer.strip().lower()
     current = Words.words_list[Words.word_num]
     if typed_word == current:
-        words_field.delete(0, END)
-        Words.next_word()
-        new_words = Words.new_words()
-        show_words(new_words[0], new_words[1])
+        score.add_to_score()
+
+    words_field.delete(0, END)
+    Words.next_word()
+    new_words_inner = Words.new_words()
+    show_words(new_words_inner[0], new_words_inner[1])
 
 
 # 1. ToDo Setup the screen
@@ -55,14 +61,10 @@ Words = Words()
 new_words = Words.new_words()
 show_words(new_words[0], new_words[1])
 
-words_field.bind("<space>", lambda x: check_word(words_field.get()))
-
-# gets rid of the text in the entry field
-
-
 # 4. ToDo on space check if word matches else
+while time.time() - start < 5:
+    words_field.bind("<space>", lambda x: check_word(words_field.get()))
 
 
-# 5. ToDo keep score
 
 window.mainloop()

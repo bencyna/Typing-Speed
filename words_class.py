@@ -16,7 +16,5 @@ class Words():
         self.upcoming_words = self.words_list[self.word_num + 1: self.word_num + 20]
         return self.upcoming_words, self.words_list[self.word_num]
 
-    def old_words(self):
-        pass;
 
 
