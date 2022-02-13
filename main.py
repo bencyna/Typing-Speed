@@ -4,11 +4,12 @@ from score import Score
 
 current = ""
 
-#Setup
+# Setup
 window = Tk()
 
 
 # 3. ToDo Call word class and compare user input to current word, if same add point and next word
+# Show the current words list
 def show_words(next_words, current_word):
     global current
     # Start list
@@ -23,6 +24,14 @@ def show_words(next_words, current_word):
     current_word_show.grid(column=0, row=1, sticky="EW")
 
 
+def check_word(answer):
+    typed_word = answer.strip().lower()
+    current = Words.words_list[Words.word_num]
+    if typed_word == current:
+        words_field.delete(0, END)
+        Words.next_word()
+        new_words = Words.new_words()
+        show_words(new_words[0], new_words[1])
 
 
 # 1. ToDo Setup the screen
@@ -41,20 +50,14 @@ website_label.grid(column=0, row=0)
 words_field = Entry(width=21, font=('Times New Roman', 20))
 words_field.grid(column=0, row=3, sticky="EW", rowspan=2, padx=5, pady=10, ipady=10)
 
-
-
-
 # Add words to screen
 Words = Words()
 new_words = Words.new_words()
 show_words(new_words[0], new_words[1])
 
-words_field.bind("<space>", lambda x: Words.check_word(words_field.get()))
+words_field.bind("<space>", lambda x: check_word(words_field.get()))
+
 # gets rid of the text in the entry field
-# self.words_field.delete(0, END)
-
-
-
 
 
 # 4. ToDo on space check if word matches else
@@ -63,4 +66,3 @@ words_field.bind("<space>", lambda x: Words.check_word(words_field.get()))
 # 5. ToDo keep score
 
 window.mainloop()
-
