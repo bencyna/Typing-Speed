@@ -20,12 +20,12 @@ class SetupScreen():
 
         # Start list
         words_list = Label(text="one, two, three, words", background="#7FDBFF")
-        words_list.grid(column=1, row=1)
+        words_list.grid(column=0, row=1)
 
         # title for input
-        password_label = Label(text="Enter your words here: ", font=("Arial", 10))
-        password_label.grid(column=0, row=3)
+        # password_label = Label(text="Enter your words here: ", font=("Arial", 10))
+        # password_label.grid(column=0, row=3)
 
         # add input field
         words_field = Entry(width=21)
-        words_field.grid(column=1, row=3, sticky="EW")
+        words_field.grid(column=0, row=3, sticky="EW", rowspan=2)

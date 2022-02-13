@@ -10,7 +10,7 @@ window = Tk()
 
 # 1. ToDo Setup the screen
 SetupScreen(window)
-
+title = Words()
 
 # 2. Todo Allow user input
 
