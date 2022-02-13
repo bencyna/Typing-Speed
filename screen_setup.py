@@ -18,14 +18,12 @@ class SetupScreen():
         website_label = Label(text="Typing test: ", background="#7FDBFF", font=("Arial", 20), justify='left')
         website_label.grid(column=0, row=0)
 
-        # Start list
-        words_list = Label(text="one, two, three, words", background="#7FDBFF")
-        words_list.grid(column=0, row=1)
-
-        # title for input
-        # password_label = Label(text="Enter your words here: ", font=("Arial", 10))
-        # password_label.grid(column=0, row=3)
-
         # add input field
         words_field = Entry(width=21)
         words_field.grid(column=0, row=3, sticky="EW", rowspan=2)
+
+    def show_words(self, next_words):
+        # Start list
+        upcoming_words = " ".join(next_words)
+        words_list = Label(text=f"{upcoming_words}", background="#7FDBFF", foreground='white', font=('Times New Roman', 20), wraplength=400)
+        words_list.grid(column=0, row=1, sticky="EW")
