@@ -5,6 +5,7 @@ import time
 
 start = time.time()
 
+
 current = ""
 
 # Setup
@@ -62,9 +63,6 @@ new_words = Words.new_words()
 show_words(new_words[0], new_words[1])
 
 # 4. ToDo on space check if word matches else
-while time.time() - start < 5:
-    words_field.bind("<space>", lambda x: check_word(words_field.get()))
-
-
+words_field.bind("<space>", lambda x: check_word(words_field.get()))
 
 window.mainloop()
