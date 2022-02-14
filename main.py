@@ -3,14 +3,14 @@ from words_class import Words
 from score import Score
 import time
 
-start = time.time()
+first = True
+score  = {}
 
 
 current = ""
 
 # Setup
 window = Tk()
-score = Score()
 
 
 # 3. ToDo Call word class and compare user input to current word, if same add point and next word
@@ -30,6 +30,13 @@ def show_words(next_words, current_word):
 
 
 def check_word(answer):
+    global first
+    global score
+    if first:
+        first = False
+        score = Score()
+
+    score.cont_countdown()
     typed_word = answer.strip().lower()
     current = Words.words_list[Words.word_num]
     if typed_word == current:
