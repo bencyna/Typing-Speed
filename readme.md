@@ -21,14 +21,14 @@ Practice your typing skills with this cool application
 
 
 ## Installation:
-Using tkinter for graphics, you the game begins when you start typing, using a class to generate the letters and a class to save your scores
+Using tkinter for graphics, the game begins when you start typing, using a class to generate the letters and a class to save your scores
 
 ## Usage:
 The purpose of this project is to develop my python skills, typing is an important skill that can make making things more efficient
 
 ***
-![image of application running in console](./assets/Screenshot1.png)  
-The image above shows the game in progress on the console.
+![image of application running in console](./assets/screenshot1.png)  
+The image above shows the game in progress with the amazing GUI
 
 ***
 
