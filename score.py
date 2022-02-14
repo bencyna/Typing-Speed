@@ -13,10 +13,10 @@ class Score():
         pass;
 
     def cont_countdown(self):
-        print(time.time() - self.countdown )
-        print(self.score)
-
-        if time.time() - self.countdown > 10:
-            print("FINSIHED BITCJ")
+        if time.time() - self.countdown > 60:
             print(self.score)
-            # print(time.time() - self.countdown)
+            print(time.time() - self.countdown)
+            return True
+        else:
+            return False
+
